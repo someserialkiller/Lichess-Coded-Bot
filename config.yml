@@ -1,4 +1,5 @@
 token: "lip_O24rmyHkl26bQEcLAmEB"    # Lichess OAuth2 Token.url: "https://lichess.org/"  # Lichess base URL.
+url: "https://lichess.org/"
 
 engine:                      # Engine settings.
   dir: "./"          # Directory containing the engine. This can be an absolute path or one relative to lichess-bot/.
