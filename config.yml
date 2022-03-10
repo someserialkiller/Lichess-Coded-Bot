@@ -1,5 +1,4 @@
-token: "lip_LxOdszffnb7u1m35raeW"    # Lichess OAuth2 Token.
-url: "https://lichess.org/"  # Lichess base URL.
+token: "lip_O24rmyHkl26bQEcLAmEB"    # Lichess OAuth2 Token.url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
   dir: "./"          # Directory containing the engine. This can be an absolute path or one relative to lichess-bot/.
@@ -13,21 +12,12 @@ engine:                      # Engine settings.
   Three-check: "fsf"   # Binary name of the engine for three check variant to use.
   working_dir: ""            # Directory where the chess engine will read and write files. If blank or missing, the current directory is used.
   protocol: "uci"            # "uci" or "xboard"
-  ponder: true               # Think on opponent's time.
+  ponder: false               # Think on opponent's time.
   polyglot:
     enabled: true           # Activate polyglot book.
     book:
       standard:              # List of book file paths for variant standard.
-        - alphavssf.bin
         - Goi5.1.bin
-        - Drawkiller_EloZoom_big.bin
-        - Goi5.1.bin
-        - Perfect2021.bin
-        - tcec.bin
-        - komodo.bin
-        - elo3300.bin
-        - Cerebellum3Merge.bin
-        - lichess_torombot_2022-03-04.bin
       atomic: # list of book file paths for variant atomic
         - atomic.bin
       antichess:
@@ -62,7 +52,7 @@ engine:                      # Engine settings.
     chessdb_book:
       enabled: false
       min_time: 20
-      move_quality: "good"   # One of "all", "good", "best".
+      move_quality: "best"   # One of "all", "good", "best".
       min_depth: 20          # Only for move_quality: "best".
       contribute: true
     lichess_cloud_analysis:
@@ -141,9 +131,9 @@ correspondence:
     ponder: false            # Ponder in correspondence games the bot is connected to.
 
 challenge:                   # Incoming challenges.
-  concurrency: 1             # Number of games to play simultaneously.
+  concurrency: 10             # Number of games to play simultaneously.
   sort_by: "best"            # Possible values: "best" and "first".
-  accept_bot: true          # Accepts challenges coming from other bots.
+  accept_bot: false          # Accepts challenges coming from other bots.
   only_bot: false            # Accept challenges by bots only.
   max_increment: 180         # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
   min_increment: 0           # Minimum amount of increment to accept a challenge.
@@ -151,7 +141,7 @@ challenge:                   # Incoming challenges.
   min_base: 0                # Minimum amount of base time to accept a challenge.
   variants:                  # Chess variants to accept (https://lichess.org/variant).
     - standard
-#   - fromPosition
+    - fromPosition
     - antichess
     - atomic
     - chess960
@@ -165,7 +155,7 @@ challenge:                   # Incoming challenges.
     - blitz
     - rapid
     - classical
-#   - correspondence
+    - correspondence
   modes:                     # Game modes to accept.
     - casual                 # Unrated games.
     - rated                  # Rated games - must comment if the engine doesn't try to win.
